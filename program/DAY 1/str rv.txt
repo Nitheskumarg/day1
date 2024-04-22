@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+void reverse_array(int arr[], int size) {
+    for (int i = 0; i < size / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[size - i - 1];
+        arr[size - i - 1] = temp;
+    }
+}
+
+int main() {
+    int size;
+    scanf("%d", &size); // Input size of the array
+
+    int arr[size];
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]); // Input array elements
+    }
+
+    reverse_array(arr, size);
+
+    // Print the reversed array
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
